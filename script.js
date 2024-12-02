@@ -3,7 +3,7 @@ class LicenseManager {
         // License configuration
         this.licenseConfig = {
             startDate: '2024-01-01', // Format: YYYY-MM-DD
-            endDate: '2024-12-01',   // Format: YYYY-MM-DD
+            endDate: '2024-12-31',   // Format: YYYY-MM-DD
             isActive: true
         };
     }
