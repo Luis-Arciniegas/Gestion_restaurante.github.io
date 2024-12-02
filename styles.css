@@ -1,0 +1,1142 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #3498db;
+    --light: #ecf0f1;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+}
+
+.header {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    background-color: var(--white);
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.tab {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.tab:hover {
+    transform: translateY(-2px);
+    background: var(--primary);
+}
+
+.tab.active {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.tab-icon {
+    font-size: 1.8rem;
+}
+
+.category-btn {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+    background: var(--primary);
+}
+
+.category-btn.active {
+    background: var(--primary);
+}
+
+.back-button {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--secondary);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    background: var(--primary);
+}
+
+.tables-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.daily-summary {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.daily-summary h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.daily-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.closure-history {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.closure-record {
+    background: var(--light);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.closure-record h3 {
+    margin-bottom: 0.5rem;
+}
+
+.closure-record button {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.closure-record button:hover {
+    background: var(--primary);
+}
+
+.daily-summary {
+    background: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.daily-summary h3 {
+    color: var(--primary);
+    margin: 0;
+}
+
+.daily-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.daily-actions .category-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.add-table-btn {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.add-table-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.add-table-btn span {
+    font-size: 1.2rem;
+}
+
+.refresh-tables-btn {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.refresh-tables-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.refresh-tables-btn span {
+    font-size: 1.2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.grid-item {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.grid-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.grid-item p {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.button-group .tab {
+    padding: 0.8rem;
+    min-width: unset;
+    height: auto;
+    border: none;
+    border-radius: 20px; /* Add rounded corners */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.button-group .tab.secondary {
+    background: var(--secondary);
+}
+
+.button-group .tab:hover {
+    transform: translateY(-2px);
+    filter: brightness(110%);
+}
+
+.button-group .cancel-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 20px; /* Add rounded corners */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-group .cancel-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(110%);
+}
+
+/* Product category view styles */
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;   
+    gap: 0.8rem;
+    min-height: 180px; /* Add minimum height */
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Add this to prevent content overflow */
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.product-card h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0 !important;
+}
+
+.product-card .price {
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.product-card .stock {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.product-card .product-actions {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Change to 2 columns instead of 3 */
+    gap: 0.5rem;
+}
+
+.product-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Add styles for action buttons stack */
+.action-buttons-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 2;
+}
+
+.product-actions button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    height: 100%;
+    min-height: 38px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Add styling for the edit button */
+.product-actions .action-button {
+    background: #3498db; /* A nice blue color */
+    color: var(--white);
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.product-actions .action-button:hover {
+    background: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Keep the existing cancel button styling */
+.product-actions .cancel-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    height: 100%;
+}
+
+.product-actions .cancel-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Tables grid styles */
+.tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.table-card {
+    background: #27ae60;
+    color: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    z-index: 1;
+    user-select: none; /* Prevent text selection on click */
+}
+
+.table-card.occupied {
+    background: #e67e22;
+    border-color: transparent;
+}
+
+.table-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    filter: brightness(1.1);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.table-card h3 {
+    color: var(--white);
+}
+
+.table-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--white);
+    opacity: 0.9;
+}
+
+.occupied .status-indicator {
+    background: var(--white);
+}
+
+.delete-table-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 2;
+    pointer-events: auto; /* Ensure button remains clickable */
+}
+
+.delete-table-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.delete-table-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.delete-table-btn:disabled:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Add these CSS rules after the existing .product-grid styles */
+
+.products-panel {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-y: auto;
+    max-height: calc(95vh - 150px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.category-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.product-item {
+    background: var(--light);
+    border-radius: 10px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.product-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: var(--white);
+}
+
+.product-item .product-name {
+    font-weight: 500;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.product-item .product-price {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.product-item .stock-info {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin-top: 0.3rem;
+}
+
+.product-item.low-stock {
+    opacity: 1; /* Change from 0.7 to 1 */
+    cursor: pointer; /* Change from not-allowed to pointer */
+}
+
+.product-item.low-stock:hover {
+    transform: translateY(-2px);
+    background: var(--light);
+}
+
+/* Order items styling */
+.order-item {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.order-item:hover {
+    transform: translateX(2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.order-item .split-select {
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.order-item .remove-item {
+    margin-left: auto;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.order-item .remove-item:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Order total styling */
+.order-total {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.order-total span {
+    font-size: 1.3rem;
+}
+
+/* Category buttons in product panel */
+.products-panel .category-btn {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.products-panel .category-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.products-panel .category-btn.active {
+    background: var(--primary);
+}
+
+/* Add these styles to fix modal positioning and appearance */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.modal-content h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.table-content-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    height: calc(80vh - 100px);
+}
+
+.order-panel {
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.order-panel h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+#orderItems {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.table-action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.table-action-buttons button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    background: var(--accent);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.table-action-buttons button:hover {
+    transform: translateY(-2px);
+    background: var(--primary);
+}
+
+.close-table, .exit-table, .split-bill {
+    width: 100%;
+}
+
+.products-panel {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: var(--white);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.category-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.confirm-split {
+    grid-column: span 3;
+    background: var(--accent) !important;
+}
+
+/* Add these styles inside the existing <style> tag */
+.daily-closure-summary {
+    padding: 2rem;
+    background: var(--white);
+}
+
+.summary-section {
+    margin-bottom: 2rem;
+    background: var(--light);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.summary-section h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    font-size: 1.2rem;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.summary-table th,
+.summary-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light);
+}
+
+.summary-table th {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.summary-table td.amount {
+    text-align: right;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.summary-table tfoot tr {
+    background: var(--light);
+    font-weight: bold;
+}
+
+.summary-table tfoot td.amount {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.summary-total {
+    background: var(--primary) !important;
+    color: var(--white);
+}
+
+.summary-total .summary-table {
+    background: transparent;
+}
+
+.summary-total .summary-table th,
+.summary-total .summary-table td {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.1);
+}
+
+.summary-total .summary-table td.amount {
+    color: var(--white);
+    font-size: 1.3rem;
+}
+
+.closure-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.closure-actions .action-button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--white);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.closure-actions .action-button:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.transaction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: var(--light);
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+
+.transaction-form input,
+.transaction-form select {
+    padding: 1rem;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--white);
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.transaction-form input::placeholder {
+    color: var(--secondary);
+    opacity: 0.7;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-buttons button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.form-buttons button[type="submit"] {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.form-buttons button[type="submit"]:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.form-buttons .cancel-btn {
+    background: #e74c3c;
+    color: var(--white);
+}
+
+.form-buttons .cancel-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Product modal specific styles */
+#productModal .modal-content {
+    max-width: 500px;
+}
+
+#productModal h2 {
+    color: var(--primary);
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 2rem;
+}
+
+/* Add these styles for printing */
+@media print {
+    .app-container {
+        padding: 0;
+    }
+
+    .header,
+    .nav-tabs,
+    .closure-actions {
+        display: none !important;
+    }
+
+    .daily-closure-summary {
+        padding: 0;
+    }
+
+    .summary-section {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+
+    .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .summary-table th,
+    .summary-table td {
+        border: 1px solid #000;
+        padding: 8px;
+    }
+
+    body {
+        background: white;
+    }
+
+    * {
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+    }
+}
+
+.product-item.low-stock {
+    opacity: 1; /* Change from 0.7 to 1 */
+    cursor: pointer; /* Change from not-allowed to pointer */
+}
+
+/* Password modal specific styles */
+#passwordModal .modal-content {
+    max-width: 400px;
+}
+
+#passwordModal input[type="password"] {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+}
+
+#passwordModal input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+#passwordModal .form-buttons {
+    margin-top: 1.5rem;
+}
+
+/* Add these styles to enhance the product actions layout */
+.product-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Style for action buttons */
+.product-actions .action-button {
+    background: #3498db;
+    color: var(--white);
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.product-actions .action-button:hover {
+    background: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Keep the existing cancel button styling */
+.product-actions .cancel-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    height: 100%;
+}
+
+.product-actions .cancel-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
