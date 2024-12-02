@@ -294,7 +294,7 @@ body {
     min-width: unset;
     height: auto;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px; /* Add rounded corners */
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -315,7 +315,7 @@ body {
     color: white;
     padding: 0.8rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px; /* Add rounded corners */
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -352,8 +352,11 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;   
     gap: 0.8rem;
+    min-height: 180px; /* Add minimum height */
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Add this to prevent content overflow */
 }
 
 .product-card:hover {
@@ -382,37 +385,75 @@ body {
 
 .product-card .product-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr; /* Change to 2 columns instead of 3 */
+    gap: 0.5rem;
+}
+
+.product-actions {
+    display: flex;
     gap: 0.8rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Add styles for action buttons stack */
+.action-buttons-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 2;
 }
 
 .product-actions button {
-    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    height: 100%;
+    min-height: 38px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Add styling for the edit button */
+.product-actions .action-button {
+    background: #3498db; /* A nice blue color */
+    color: var(--white);
     padding: 0.8rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 500;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-}
-
-.product-actions .action-button {
-    background: var(--accent);
-    color: var(--white);
+    font-size: 0.9rem;
 }
 
 .product-actions .action-button:hover {
-    background: var(--primary);
+    background: #2980b9; /* Darker blue on hover */
     transform: translateY(-2px);
 }
 
+/* Keep the existing cancel button styling */
 .product-actions .cancel-btn {
     background: #e74c3c;
-    color: var(--white);
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    height: 100%;
 }
 
 .product-actions .cancel-btn:hover {
@@ -1048,6 +1089,59 @@ body {
 #passwordModal .form-buttons {
     margin-top: 1.5rem;
 }
+
+/* Add these styles to enhance the product actions layout */
+.product-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Style for action buttons */
+.product-actions .action-button {
+    background: #3498db;
+    color: var(--white);
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.product-actions .action-button:hover {
+    background: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+/* Keep the existing cancel button styling */
+.product-actions .cancel-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    height: 100%;
+}
+
+.product-actions .cancel-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
 </style>
 </head>
 <body>
@@ -1242,6 +1336,21 @@ class StoreManager {
             return true;
         }
         return false;
+    }
+
+    updateCategoryName(oldName, newName) {
+        const categoryIndex = this.categories.findIndex(c => c.name === oldName);
+        if (categoryIndex === -1) return false;
+
+        // Check if new name already exists
+        if (this.categories.some(c => c.name === newName && c.name !== oldName)) {
+            return false;
+        }
+
+        // Update category name
+        this.categories[categoryIndex].name = newName;
+        this.saveToStorage();
+        return true;
     }
 
     addProduct(categoryName, product) {
@@ -2029,10 +2138,16 @@ class UIManager {
                                 ${category.products.length} producto${category.products.length !== 1 ? 's' : ''}
                             </p>
                             <div class="product-actions">
-                                <button class="action-button" onclick="uiManager.viewCategoryProducts('${category.name}')">
-                                    <span>🔍</span>
-                                    Ver Productos
-                                </button>
+                                <div class="action-buttons-stack">
+                                    <button class="action-button" onclick="uiManager.viewCategoryProducts('${category.name}')">
+                                        <span>🔍</span>
+                                        Ver Productos
+                                    </button>
+                                    <button class="action-button" onclick="uiManager.editCategoryName('${category.name}')">
+                                        <span>✏️</span>
+                                        Editar Nombre
+                                    </button>
+                                </div>
                                 <button class="cancel-btn" onclick="uiManager.deleteCategory('${category.name}')">
                                     <span>🗑️</span>
                                     Eliminar
@@ -2253,6 +2368,21 @@ class UIManager {
         
         // Open the category modal
         this.openModal('categoryModal');
+    }
+
+    editCategoryName(categoryName) {
+        const newName = prompt('Ingrese el nuevo nombre para la categoría:', categoryName);
+        
+        if (!newName || newName.trim() === '') {
+            return; // User canceled or empty input
+        }
+        
+        if (storeManager.updateCategoryName(categoryName, newName.trim())) {
+            alert('Nombre de categoría actualizado exitosamente');
+            this.changeTab('products'); // Refresh view
+        } else {
+            alert('No se pudo actualizar el nombre. Posiblemente ya existe una categoría con ese nombre.');
+        }
     }
 
     handleEndDay() {
