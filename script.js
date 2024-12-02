@@ -30,7 +30,7 @@ class LicenseManager {
                     <div style="text-align: center; padding: 50px; color: #e74c3c;">
                         <h1>⚠️ Licencia Expirada</h1>
                         <p>${message}</p>
-                        <p>Contacte al soporte técnico para más información.</p>
+                        <p>Contacte al administrador para más información WhatsApp (+57) 3005208036 .</p>
                     </div>`;
                 return false;
             }
